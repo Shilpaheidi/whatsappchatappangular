@@ -1,0 +1,45 @@
+
+
+<div class="screen-container">
+  <div class="recent-chat-container">
+
+    <div>
+    <input type="text" placeholder="search for contacts"   (keyup)="filterUsers()"      [(ngModel)]="searchUsers" class="filter-chats">
+    </div>
+    <div class="recent-chat"  *ngFor="let chat of recentChats;let i = index;" (click)="openChatRooms(chat,i)">
+      <img src="https://via.placeholder.com/50" alt="Shilpa's Profile" class="chat-profile">
+      <div class="chat-info">
+        <div class="chat-user">{{chat.sender_username}}</div>
+        <div class="chat-message">{{chat.message}}</div>
+      </div>
+    </div>
+  
+  </div>
+  
+  <div *ngIf="receiver" class="chat-container">
+    <div class="message-list">
+      <div
+        *ngFor="let msg of messages"
+        [class.current-user]="msg.userId == userId"
+        [class.receiver-user]="msg.userId == receiverId"
+      >
+        <div class="message-box">
+          <div>
+          <strong *ngIf="msg.user !== username">{{ msg.user }}:</strong>
+          {{ msg.message }}
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-inputs">
+      <!-- <input [(ngModel)]="receiver" placeholder="Receiver Username" /> -->
+      <input
+        [(ngModel)]="message"
+        (keyup.enter)="sendMessage()"
+        placeholder="Message"
+      />
+      <button class="" (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+</div>

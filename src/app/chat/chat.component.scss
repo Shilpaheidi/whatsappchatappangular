@@ -1,0 +1,151 @@
+/* Main container that takes up the full height of the viewport */
+.screen-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  box-sizing: border-box;
+  overflow: hidden; /* Prevents browser scroll */
+  margin: 0;
+}
+
+.recent-chat-container {
+  flex-grow: 1;
+  max-width: 25%;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+  height: 100%; /* Full height */
+  overflow-y: auto; /* Enable scrolling for long lists */
+  border-right: 1px solid #ccc;
+}
+
+/* Styling for each recent chat */
+.recent-chat {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.recent-chat:hover {
+  background-color: #eaeaea;
+}
+
+/* Profile photo styling */
+.chat-profile {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Make the image circular */
+  margin-right: 10px;
+}
+
+/* Chat info next to profile picture */
+.chat-info {
+  flex-grow: 1;
+}
+
+.chat-user {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.chat-message {
+  font-size: 14px;
+  color: #555;
+  word-wrap: break-word;
+}
+
+.chat-container {
+  flex-grow: 3;
+  max-width: 75%;
+  // padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Prevents scroll on chat container */
+  height: 100%; /* Full height for chat container */
+}
+
+.message-list {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto; /* Enables vertical scrolling for messages */
+  background-color: #f1f1f1;
+  box-sizing: border-box;
+}
+
+.message-list .message-box {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 2px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.message-list .current-user {
+  text-align: right;
+  clear: both;
+}
+
+.message-list .current-user .message-box {
+  background-color: rgba(156, 29, 162, 0.819);
+  color: white;
+  float: right;
+}
+
+.message-list .receiver-user {
+  text-align: left;
+  clear: both;
+}
+
+.message-list .receiver-user .message-box {
+  background-color: rgb(146, 144, 238);
+  color: black;
+  float: left;
+}
+
+.chat-inputs {
+  display: flex;
+  padding: 10px;
+  background-color: #ddd;
+  box-sizing: border-box;
+  flex-shrink: 0; /* Prevents shrinking */
+  /* Ensures the chat inputs stay at the bottom */
+}
+
+.chat-inputs input {
+  flex: 1;
+  margin-right: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.chat-inputs button {
+  padding: 10px 20px;
+  background-color: cadetblue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chat-inputs button:hover {
+  background-color: #0056b3;
+}
+
+.filter-chats {
+  margin: 6px;
+  padding: 5px;
+  height: 31px;
+  width: -webkit-fill-available;
+  font-size: 18px !important;
+  border-radius: 20px;
+}
